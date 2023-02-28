@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: schavez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 14:26:28 by schavez           #+#    #+#             */
-/*   Updated: 2023/02/28 15:14:41 by schavez          ###   ########.fr       */
+/*   Updated: 2023/02/28 16:59:16 by schavez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -35,20 +35,28 @@ void	writer_f(int i, int comma, int root_laats, int laats)
 	}
 }
 
-void	ft_print_comb(void)
-{	
+void	handle_one(void)
+{
+	char	*d;
+
+	d = "0123456789\n";
+	write(1, d, 11);
+}
+
+void	handle_the_rest(int nb)
+{
 	int	root;
 	int	laatste;
 	int	i;
 
-	root = 10 - 3;
+	root = 10 - nb;
 	while (root >= 0)
 	{
 		laatste = 0;
 		while (laatste <= root)
 		{
-			i = 10 - 3 - root;
-			while (i < 10 - 3 - root + 2)
+			i = 10 - nb - root;
+			while (i < 10 - nb - root + (nb -1))
 			{
 				writer_f(i, 0, root, laatste);
 				i++;
@@ -57,5 +65,17 @@ void	ft_print_comb(void)
 			laatste++;
 		}
 		root--;
+	}
+}
+
+void	ft_print_comb(int nb)
+{	
+	if (nb == 1)
+	{
+		handle_one();
+	}
+	else
+	{
+		handle_the_rest(nb);
 	}
 }

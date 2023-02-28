@@ -1,12 +1,17 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: schavez <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/28 13:59:08 by schavez           #+#    #+#             */
+/*   Updated: 2023/02/28 14:00:31 by schavez          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include <unistd.h>
-void ft_putchar(char c);
 
-int main(){
-	ft_putchar('A');
-	return 0;
-}
-
-void ft_putchar(char c){
-	write(1,&c,1);
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
 }

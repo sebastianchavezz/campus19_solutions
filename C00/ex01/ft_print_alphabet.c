@@ -1,17 +1,25 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: schavez <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/28 14:02:08 by schavez           #+#    #+#             */
+/*   Updated: 2023/02/28 14:17:20 by schavez          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include <unistd.h>
 
-void ft_print_alphabet();
-int main(void){
-	ft_print_alphabet();
-	return 0;
-}
-void ft_print_alphabet(void){
-	char ch;
-	for(ch ='a';ch <= 'z'; ch++){
-		write(1,&ch,1);
-	}
-	char nl = '\n';
-	write(1,&nl,2);
-}
+void	ft_print_alphabet(void)
+{
+	char	ch;
 
+	ch = 'a';
+	while (ch <= 'z')
+	{	
+		write(1, &ch, 1);
+		ch++;
+	}
+	write(1, '\n', 1);
+}
