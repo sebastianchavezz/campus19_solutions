@@ -5,24 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: schavez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/28 16:04:21 by schavez           #+#    #+#             */
-/*   Updated: 2023/02/28 16:41:01 by schavez          ###   ########.fr       */
+/*   Created: 2023/03/01 10:28:32 by schavez           #+#    #+#             */
+/*   Updated: 2023/03/01 21:58:35 by schavez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
 
-void	ft_putnbr(int i)
+void	ft_putnbr(int nb)
 {
-	int		remain;
 	char	c;
 
-	write(1, "\"", 1);
-	while (i != 0)
+	if (nb < 0)
 	{
-		remain = i % 10;
-		c = '0' + remain;
-		write(1, &c, 1);
-		i /= 10;
+		nb = -1 * nb;
+		write(1, "-", 1);
 	}
-	write(1, "\"\n", 2);
+	if (nb >= 10)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+	else
+	{
+		c = nb + '0';
+		write(1, &c, 1);
+	}
 }

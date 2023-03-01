@@ -6,7 +6,7 @@
 /*   By: schavez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 14:13:08 by schavez           #+#    #+#             */
-/*   Updated: 2023/02/28 14:16:54 by schavez          ###   ########.fr       */
+/*   Updated: 2023/03/01 15:50:23 by schavez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -21,5 +21,4 @@ void	ft_print_reverse_alphabet(void)
 		write(1, &ch, 1);
 		ch--;
 	}
-	write(1, "\n", 1);
 }

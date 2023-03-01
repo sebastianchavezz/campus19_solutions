@@ -6,76 +6,45 @@
 /*   By: schavez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 14:26:28 by schavez           #+#    #+#             */
-/*   Updated: 2023/02/28 16:59:16 by schavez          ###   ########.fr       */
+/*   Updated: 2023/03/01 22:07:35 by schavez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
-#include <stdio.h>
 
-void	writer_f(int i, int comma, int root_laats, int laats)
+void ft_print_combn_recursive(int n, int start, int depth, char *buffer)
 {
-	char	*c;
-	char	d;
-
-	c = "0123456789";
-	d = *(c + i);
-	if (comma == 1 && root_laats > 0)
-	{
-		write(1, &d, 1);
-		write(1, ", ", 2);
-	}
-	else if (laats == 0 && root_laats == 0 && comma == 1)
-	{
-		write(1, &d, 1);
-		write(1, "\n", 1);
-	}
-	else
-	{
-		write(1, &d, 1);
-	}
+    int i;
+    
+    if (depth == n)
+    {
+        write(1, buffer, n);
+        if (buffer[0] < '0' + (10 - n))
+            write(1, ", ", 2);
+        return;
+    }
+    for (i = start; i <= 9; i++)
+    {
+        buffer[depth] = '0' + i;
+        ft_print_combn_recursive(n, i + 1, depth + 1, buffer);
+    }
 }
 
-void	handle_one(void)
+void ft_print_combn(int n)
 {
-	char	*d;
-
-	d = "0123456789\n";
-	write(1, d, 11);
+    char buffer[10];
+    int i;
+    
+    if (n < 1 || n > 9)
+        return;
+    for (i = 0; i < n; i++)
+        buffer[i] = '0';
+    buffer[n] = '\0';
+    ft_print_combn_recursive(n, 0, 0, buffer);
+    write(1, "\n", 1);
 }
-
-void	handle_the_rest(int nb)
+int main(void)
 {
-	int	root;
-	int	laatste;
-	int	i;
+	ft_print_combn(4);
+	return 0;
 
-	root = 10 - nb;
-	while (root >= 0)
-	{
-		laatste = 0;
-		while (laatste <= root)
-		{
-			i = 10 - nb - root;
-			while (i < 10 - nb - root + (nb -1))
-			{
-				writer_f(i, 0, root, laatste);
-				i++;
-			}
-			writer_f(i + laatste, 1, root, laatste);
-			laatste++;
-		}
-		root--;
-	}
-}
-
-void	ft_print_comb(int nb)
-{	
-	if (nb == 1)
-	{
-		handle_one();
-	}
-	else
-	{
-		handle_the_rest(nb);
-	}
 }

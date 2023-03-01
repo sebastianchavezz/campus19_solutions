@@ -6,56 +6,49 @@
 /*   By: schavez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 14:26:28 by schavez           #+#    #+#             */
-/*   Updated: 2023/02/28 15:14:41 by schavez          ###   ########.fr       */
+/*   Updated: 2023/03/01 16:30:45 by schavez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
-#include <stdio.h>
 
-void	writer_f(int i, int comma, int root_laats, int laats)
+void	handle_writer(char a, char b, char c)
 {
-	char	*c;
-	char	d;
-
-	c = "0123456789";
-	d = *(c + i);
-	if (comma == 1 && root_laats > 0)
+	if (a == '7' && b == '8' && c == '9')
 	{
-		write(1, &d, 1);
-		write(1, ", ", 2);
-	}
-	else if (laats == 0 && root_laats == 0 && comma == 1)
-	{
-		write(1, &d, 1);
+		write(1, &a, 1);
+		write(1, &b, 1);
+		write(1, &c, 1);
 		write(1, "\n", 1);
 	}
 	else
 	{
-		write(1, &d, 1);
+		write(1, &a, 1);
+		write(1, &b, 1);
+		write(1, &c, 1);
+		write(1, ", ", 2);
 	}
 }
 
 void	ft_print_comb(void)
-{	
-	int	root;
-	int	laatste;
-	int	i;
+{
+	char	i;
+	char	j;
+	char	k;
 
-	root = 10 - 3;
-	while (root >= 0)
+	i = '0';
+	while (i <= '7')
 	{
-		laatste = 0;
-		while (laatste <= root)
+		j = i + 1;
+		while (j <= '8')
 		{
-			i = 10 - 3 - root;
-			while (i < 10 - 3 - root + 2)
+			k = j + 1;
+			while (k <= '9')
 			{
-				writer_f(i, 0, root, laatste);
-				i++;
+				handle_writer(i, j, k);
+				k++;
 			}
-			writer_f(i + laatste, 1, root, laatste);
-			laatste++;
+			j++;
 		}
-		root--;
+		i++;
 	}
 }
