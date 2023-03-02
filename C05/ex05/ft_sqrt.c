@@ -1,27 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_power.c                               :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: schavez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/02 17:12:29 by schavez           #+#    #+#             */
-/*   Updated: 2023/03/02 17:15:30 by schavez          ###   ########.fr       */
+/*   Created: 2023/03/02 18:22:02 by schavez           #+#    #+#             */
+/*   Updated: 2023/03/02 20:12:01 by schavez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
-
-int	ft_recursive_power(int nb, int power)
+int	ft_sqrt(int nb)
 {
-	if (power <= 1 )
+	long	index;
+	long	b;
+
+	b = nb;
+	if (b <= 0)
 	{
-		return nb;
+		return (0);
 	}
-	return nb*ft_recursive_power(power-1);
-
+	if (b == 1)
+	{
+		return (1);
+	}
+	index = 2;
+	if (b >= 2)
+	{
+		while (index * index <= b)
+		{
+			if (index * index == b)
+			{
+				return (index);
+			}
+			index++;
+		}
+	}
+	return (0);
 }
-
 int main(void)
 {
-	printf("%d\n",ft_recursive_power(2,10));
+	printf("%d ",ft_sqrt(144));
 }
