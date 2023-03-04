@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: schavez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/28 22:26:58 by schavez           #+#    #+#             */
-/*   Updated: 2023/03/03 18:20:47 by schavez          ###   ########.fr       */
+/*   Created: 2023/03/03 12:26:36 by schavez           #+#    #+#             */
+/*   Updated: 2023/03/03 13:26:49 by schavez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+#include <stdio.h>
+#include <unistd.h>
+int main(int argc, char *argv[])
 {
 	int	i;
-	int	result;
-
-	i = 0;
-	while (*(s1 + i) != '\0' && i < n)
+	int	j;
+	i = argc - 1;
+	while (i > 0)
 	{
-		if (*(s1 + i) != *(s2 + i))
-		{
-			result = *(s1 + i) - *(s2 + i);
-			return (result);
+		j = 0;
+		while (argv[i][j] != '\0')
+		{	
+			write(1, &argv[i][j],1 );
+			j++;	
 		}
-		i++;
+		write(1, "\n", 1);
+		i--;
 	}
-	return (0);
+
 }
