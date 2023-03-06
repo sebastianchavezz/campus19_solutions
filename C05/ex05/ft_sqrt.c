@@ -6,10 +6,10 @@
 /*   By: schavez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 18:22:02 by schavez           #+#    #+#             */
-/*   Updated: 2023/03/02 20:12:01 by schavez          ###   ########.fr       */
+/*   Updated: 2023/03/06 18:57:26 by schavez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+
 int	ft_sqrt(int nb)
 {
 	long	index;
@@ -37,8 +37,4 @@ int	ft_sqrt(int nb)
 		}
 	}
 	return (0);
-}
-int main(void)
-{
-	printf("%d ",ft_sqrt(144));
 }

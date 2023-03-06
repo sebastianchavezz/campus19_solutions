@@ -6,7 +6,7 @@
 /*   By: schavez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 23:11:37 by schavez           #+#    #+#             */
-/*   Updated: 2023/03/03 18:24:41 by schavez          ###   ########.fr       */
+/*   Updated: 2023/03/06 15:05:23 by schavez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 int	l_str(char *strng)
@@ -23,8 +23,8 @@ int	l_str(char *strng)
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int	end;
-	int	i;
+	int				end;
+	unsigned int	i;
 
 	end = l_str(dest);
 	i = 0;

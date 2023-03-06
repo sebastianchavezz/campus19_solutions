@@ -6,13 +6,13 @@
 /*   By: schavez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 21:14:15 by schavez           #+#    #+#             */
-/*   Updated: 2023/02/28 21:17:13 by schavez          ###   ########.fr       */
+/*   Updated: 2023/03/06 18:08:46 by schavez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*astrncpy(char *dest, char *src, unsigned int n)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (i < n && *(src + i) != '\0')

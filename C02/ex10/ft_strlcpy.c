@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlcpy.c                                          :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: schavez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 21:51:09 by schavez           #+#    #+#             */
-/*   Updated: 2023/02/28 21:55:02 by schavez          ###   ########.fr       */
+/*   Updated: 2023/03/06 14:54:48 by schavez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	int		src_len;
-	char	*src_ptr;
-	int		i;
+	unsigned int	src_len;
+	char			*src_ptr;
+	int				i;
 
 	i = 0;
 	src_len = 0;

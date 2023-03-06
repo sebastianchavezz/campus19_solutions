@@ -6,7 +6,7 @@
 /*   By: schavez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 23:25:48 by schavez           #+#    #+#             */
-/*   Updated: 2023/03/03 18:25:49 by schavez          ###   ########.fr       */
+/*   Updated: 2023/03/06 15:31:25 by schavez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 char	*ft_strstr(char *str, char *to_find)
@@ -28,5 +28,5 @@ char	*ft_strstr(char *str, char *to_find)
 		}
 		i++;
 	}
-	return (NULL);
+	return ((void *)0);
 }

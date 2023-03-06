@@ -6,17 +6,17 @@
 /*   By: schavez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 12:17:35 by schavez           #+#    #+#             */
-/*   Updated: 2023/03/02 16:05:26 by schavez          ###   ########.fr       */
+/*   Updated: 2023/03/06 18:49:40 by schavez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
-#include <stdio.h>
+
 int	l_base(char *str)
 {
 	int	i;
-	
+
 	i = 0;
-	while(*(str + i) != '\0')
+	while (*(str + i) != '\0')
 	{
 		i++;
 	}
@@ -26,26 +26,43 @@ int	l_base(char *str)
 void	writer(int i, char *base)
 {
 	char	c;
-	
+
 	c = *(base + i);
-	write(1,&c,1);	
+	write(1, &c, 1);
 }
-// moet nog execeptions doen!
-int	check_invalid(int nbr, char *base, int len)
+
+int	same_char(char *base)
 {
-	if (len  < 2)
-	
+	int	i;
+	int	j;
+
+	i = 1;
+	while (*(base + i) != '\0')
+	{
+		j = 0;
+		while (j < i)
+		{
+			if (*(base + i) == *(base + j) || *(base + j) == '-')
+				return (0);
+			j++;
+		}	
+		i++;
+	}
+	return (1);
 }
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	int	len;
+	int		len;
 	char	c;	
 
 	len = l_base(base);
+	if (len < 2 || same_char(base) == 0)
+		return ;
 	if (nbr < 0)
 	{
 		nbr = nbr * -1;
+		write(1, "-", 1);
 	}
 	if (nbr >= len)
 	{
@@ -53,15 +70,4 @@ void	ft_putnbr_base(int nbr, char *base)
 		nbr = nbr % len;
 	}
 	writer(nbr, base);
-	
 }
-int		main(void)
-{
-	ft_putnbr_base(162, "01");
-	printf("\n");
-	ft_putnbr_base(40, "poneyvif");
-	printf("\n");
-	//ft_putnbr_base(894867, "0123456789");
-	ft_putnbr_base(526, "0123456789abcdef");
-}
-

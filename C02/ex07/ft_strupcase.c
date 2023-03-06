@@ -6,11 +6,11 @@
 /*   By: schavez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 21:34:47 by schavez           #+#    #+#             */
-/*   Updated: 2023/02/28 21:36:42 by schavez          ###   ########.fr       */
+/*   Updated: 2023/03/06 14:45:57 by schavez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_str_is_uppercase(char *str)
+char	*ft_strupcase(char *str)
 {
 	int		i;
 	char	c;

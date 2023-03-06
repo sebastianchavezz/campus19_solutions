@@ -1,39 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: schavez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/02 15:20:31 by schavez           #+#    #+#             */
-/*   Updated: 2023/03/02 15:45:57 by schavez          ###   ########.fr       */
+/*   Created: 2023/03/06 17:31:50 by schavez           #+#    #+#             */
+/*   Updated: 2023/03/06 17:35:25 by schavez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdlib.h>
 
-void	ft_putnbr_base(int nbr, char *base)
+int	ft_ultimate_range(int **range, int min, int max)
 {
-	
+
 
 }
-void	ft_putnbr(int nb)
-{
-	char	c;
 
-	if (nb < 0)
-	{
-		nb = -1 * nb;
-		write(1, "-", 1);
-	}
-	if (nb >= 10)
-	{
-		ft_putnbr(nb / 10);
-		nb = inb % 10;
-	}
-	c = nb + '0';
-	write(1, &c, 1);
-}
-int main(void)
-{
-	ft_putnbr(4555);
-
-}

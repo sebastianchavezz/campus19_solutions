@@ -6,11 +6,11 @@
 /*   By: schavez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 21:07:25 by schavez           #+#    #+#             */
-/*   Updated: 2023/02/28 21:14:00 by schavez          ###   ########.fr       */
+/*   Updated: 2023/03/06 18:07:20 by schavez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strcp(char *destination, char *source)
+char	*ft_strcpy(char *destination, char *source)
 {
 	int	i;
 

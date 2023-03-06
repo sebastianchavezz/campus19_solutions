@@ -6,13 +6,13 @@
 /*   By: schavez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 22:26:58 by schavez           #+#    #+#             */
-/*   Updated: 2023/03/03 18:20:47 by schavez          ###   ########.fr       */
+/*   Updated: 2023/03/06 15:03:18 by schavez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int	i;
-	int	result;
+	unsigned int	i;
+	int				result;
 
 	i = 0;
 	while (*(s1 + i) != '\0' && i < n)

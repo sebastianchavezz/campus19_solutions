@@ -6,7 +6,7 @@
 /*   By: schavez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 00:27:44 by schavez           #+#    #+#             */
-/*   Updated: 2023/03/03 18:27:34 by schavez          ###   ########.fr       */
+/*   Updated: 2023/03/06 16:03:33 by schavez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 int	l_str(char *strng)
@@ -39,9 +39,9 @@ char	*l_strcat(char *dest, char *src, int nb)
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	int	dest_l;
-	int	src_l;
-	int	nb;	
+	unsigned int	dest_l;
+	unsigned int	src_l;
+	int				nb;	
 
 	if (size <= dest_l)
 	{

@@ -6,16 +6,14 @@
 /*   By: schavez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 22:47:17 by schavez           #+#    #+#             */
-/*   Updated: 2023/03/03 10:07:51 by schavez          ###   ########.fr       */
+/*   Updated: 2023/03/06 18:58:19 by schavez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 
 int	ft_is_prime(int nb)
 {
+	int	i;
 
-	int i;
-	
 	i = 2;
 	while (i < nb / 2)
 	{
@@ -27,10 +25,3 @@ int	ft_is_prime(int nb)
 	}
 	return (1);
 }
-
-int main (void)
-{
-printf("%d -> %d\n", 632, ft_is_prime(632));
-
-}
-

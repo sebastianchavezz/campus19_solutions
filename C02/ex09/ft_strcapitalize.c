@@ -6,11 +6,11 @@
 /*   By: schavez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 21:40:59 by schavez           #+#    #+#             */
-/*   Updated: 2023/02/28 21:48:58 by schavez          ###   ########.fr       */
+/*   Updated: 2023/03/06 14:52:15 by schavez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	check_is_lower(char *chl)
+void	check_is_lower(char *chl)
 {
 	if (*chl >= 97 && *chl <= 122)
 	{
